@@ -539,13 +539,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 7046131642954982243, guid: 084ec548984d6084e996bc7ab5e8c2be, type: 3}
+  - {fileID: 4712491168034343248, guid: 084ec548984d6084e996bc7ab5e8c2be, type: 3}
   - {fileID: 7862269010904107929, guid: d4136e5cf4358324187c7f980dee766f, type: 3}
   - {fileID: 6457958368680957241, guid: 3fe2c36027274da448dec8c957e30707, type: 3}
   - {fileID: 3736129046892947335, guid: 4dc8ec78e58e25f4aac6e5d09b658ff2, type: 3}
   - {fileID: 4122247915597242877, guid: a0d062d1ae656904197452b08b9406a3, type: 3}
+  combatManager: {fileID: 0}
+  armyLeftUnits: []
   armyLeftSpawnParent: {fileID: 278868168}
   armyLeftSpawnArea: {fileID: 442873913}
+  armyRightUnits: []
   armyRightSpawnParent: {fileID: 1353391285}
   armyRightSpawnArea: {fileID: 1541688169}
 --- !u!1 &246465937
@@ -810,6 +813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitsFactory: {fileID: 0}
+  army_1: []
+  army_2: []
 --- !u!1 &726838010
 GameObject:
   m_ObjectHideFlags: 0

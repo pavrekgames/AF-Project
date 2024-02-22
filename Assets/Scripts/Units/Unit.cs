@@ -7,6 +7,7 @@ namespace AFSInterview.Units
 {
     public abstract class Unit : MonoBehaviour
     {
+        [SerializeField] protected GameObject unitPresenter;
         [SerializeField] protected List<UnitAttribute> attributes = new List<UnitAttribute>();
         [SerializeField] protected int health;
         [SerializeField] protected int armor;
@@ -14,6 +15,7 @@ namespace AFSInterview.Units
         [SerializeField] protected int attackDamage;
         [SerializeField] protected int optionalAttackDamage;
 
+        public GameObject UnitPresenter => unitPresenter;
 
         public virtual void Attack(Unit unit, int damage)
         {
