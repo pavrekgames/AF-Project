@@ -35,14 +35,8 @@
 
         private void Update()
         {
-
-            if (Input.GetMouseButtonDown(0))
-                TryPickUpItem();
-
-            if (Input.GetKeyDown(KeyCode.Space))
-                inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
-
-            moneyText.text = "Money: " + inventoryController.Money;
+            TryPickUpIemInput();
+            SellAllItemsUpToValueInput();
         }
 
         private void SpawnNewItem()
@@ -68,5 +62,24 @@
             inventoryController.AddItem(item);
             Debug.Log("Picked up " + item.Name + " with value of " + item.Value + " and now have " + inventoryController.ItemsCount + " items");
         }
+
+        #region Inputs
+
+        private void TryPickUpIemInput()
+        {
+            if (Input.GetMouseButtonDown(0))
+                TryPickUpItem();
+        }
+
+        private void SellAllItemsUpToValueInput()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
+                moneyText.text = "Money: " + inventoryController.Money;
+            }
+        }
+
+        #endregion
     }
 }
