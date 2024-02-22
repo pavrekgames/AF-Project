@@ -16,6 +16,10 @@ namespace AFSInterview.Units
                 damage += optionalAttackDamage;
                 unit.ReceiveDamage(damage);
             }
+            else
+            {
+                unit.ReceiveDamage(damage);
+            }
         }
 
     }

@@ -9,15 +9,15 @@ c) Extend the whole system by introducing a concept of a consumable item, that u
 Part 2:
 Implement a system that will be used to execute fights between certain army units.
 
-Unit types: Long Sword Knight, Archer, Druid, Catapult, Ram
+Unit types: Long Sword Knight, Archer, Druid, Catapult, Ram [OK]
 
 Unit should specify its:
--unit attributes (Light, Armored, Mechanical - each unit can have one or more attributes at once)
--health points
--armor points
--attack interval (the number of turns that need to pass to be able to perform an attack again, so a value of 1 means that a unit can perform the attack each turn)
--attack damage
--an optional attack damage override value against units with a specific attribute
+-unit attributes (Light, Armored, Mechanical - each unit can have one or more attributes at once) [OK]
+-health points [OK]
+-armor points [OK]
+-attack interval (the number of turns that need to pass to be able to perform an attack again, so a value of 1 means that a unit can perform the attack each turn) [OK]
+-attack damage [OK]
+-an optional attack damage override value against units with a specific attribute [OK]
 
 The damage dealt should be calculated by taking the attack damage and subtracting the armor points. The final damage dealt can not fall below the value of 1 in any case.
 When the health points of a unit reach 0, the unit should be considered unable to fight and should be removed from the army.
