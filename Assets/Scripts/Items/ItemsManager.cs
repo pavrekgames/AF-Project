@@ -16,10 +16,14 @@
         private Camera mainCamera;
         private LayerMask layerMask;
 
+        [Header("UI")]
+        private TextMeshProUGUI moneyText;
+
         private void Initialize()
         {
             mainCamera = Camera.main;
             layerMask = LayerMask.GetMask("Item");
+            moneyText = FindObjectOfType<TextMeshProUGUI>();
         }
 
         private void Start()
@@ -38,7 +42,7 @@
             if (Input.GetKeyDown(KeyCode.Space))
                 inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
 
-            FindObjectOfType<TextMeshProUGUI>().text = "Money: " + inventoryController.Money;
+            moneyText.text = "Money: " + inventoryController.Money;
         }
 
         private void SpawnNewItem()
