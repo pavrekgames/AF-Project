@@ -6,6 +6,17 @@ namespace AFSInterview.Units
 {
     public class Ram : Unit
     {
-        
+        [SerializeField] private UnitAttribute damagleAttribute;
+
+        public override void Attack(Unit unit, int damage)
+        {
+            List<UnitAttribute> attributes = unit.GetAttributes();
+
+            if (attributes.Contains(damagleAttribute))
+            {
+                damage += optionalAttackDamage;
+                unit.ReceiveDamage(damage);
+            }
+        }
     }
 }

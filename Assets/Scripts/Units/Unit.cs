@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 namespace AFSInterview.Units
@@ -14,9 +15,9 @@ namespace AFSInterview.Units
         [SerializeField] protected int optionalAttackDamage;
 
 
-        protected virtual void Attack(int damage)
+        public virtual void Attack(Unit unit, int damage)
         {
-
+            unit.ReceiveDamage(damage);
         }
 
         public void ReceiveDamage(int damage)
@@ -32,6 +33,11 @@ namespace AFSInterview.Units
             {
                 Destroy(gameObject);
             }
+        }
+
+        public List<UnitAttribute> GetAttributes()
+        {
+            return attributes;
         }
 
     }
