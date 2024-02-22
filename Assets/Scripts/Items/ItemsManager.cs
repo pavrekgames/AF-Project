@@ -12,13 +12,14 @@
 		[SerializeField] private BoxCollider itemSpawnArea;
 		[SerializeField] private float itemSpawnInterval;
 
-		private float nextItemSpawnTime;
-		
-		private void Update()
+        private void Start()
+        {
+            InvokeRepeating("SpawnNewItem", 0, itemSpawnInterval);
+        }
+
+        private void Update()
 		{
-			if (Time.time >= nextItemSpawnTime)
-				SpawnNewItem();
-			
+
 			if (Input.GetMouseButtonDown(0))
 				TryPickUpItem();
 			
@@ -30,8 +31,6 @@
 
 		private void SpawnNewItem()
 		{
-			nextItemSpawnTime = Time.time + itemSpawnInterval;
-			
 			var spawnAreaBounds = itemSpawnArea.bounds;
 			var position = new Vector3(
 				Random.Range(spawnAreaBounds.min.x, spawnAreaBounds.max.x),
