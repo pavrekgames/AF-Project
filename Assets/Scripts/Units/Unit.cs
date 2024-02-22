@@ -23,6 +23,12 @@ namespace AFSInterview.Units
         public void ReceiveDamage(int damage)
         {
             int damagePoint = damage - armor;
+
+            if (damagePoint < 1)
+            {
+                damagePoint = 1;
+            }
+
             health -= damagePoint;
             CheckUnitDead();
         }
