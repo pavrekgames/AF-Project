@@ -11,6 +11,9 @@
         public int Money => money;
         public int ItemsCount => items.Count;
 
+        public delegate void MoneyDelegate(int money);
+        public static event MoneyDelegate OnSoldItemsUpToValue;
+
         public void SellAllItemsUpToValue(int maxValue)
         {
             int itemsValue = 0;
@@ -41,6 +44,7 @@
             }
 
             RemoveItemsUpToValue(items, itemsToRemove);
+            OnSoldItemsUpToValue?.Invoke(money);
         }
 
         private void RemoveItemsUpToValue(List<Item> items, List<Item> itemsToRemove)

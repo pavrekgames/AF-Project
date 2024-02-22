@@ -24,6 +24,9 @@
             mainCamera = Camera.main;
             layerMask = LayerMask.GetMask("Item");
             moneyText = FindObjectOfType<TextMeshProUGUI>();
+
+            InventoryController.OnSoldItemsUpToValue += UpdateMoneyText;
+            moneyText.text = "Money: " + inventoryController.Money;
         }
 
         private void Start()
@@ -76,8 +79,17 @@
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
-                moneyText.text = "Money: " + inventoryController.Money;
+                
             }
+        }
+
+        #endregion
+
+        #region UI
+
+        private void UpdateMoneyText(int money)
+        {
+            moneyText.text = "Money: " + money;
         }
 
         #endregion
