@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068614219d9b31740a35886577783d16, type: 3}
   m_Name: MechanicalAttribute
   m_EditorClassIdentifier: 
-  unitAttributes: 0
+  unitAttributes: 2

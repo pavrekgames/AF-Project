@@ -19,8 +19,8 @@ Unit should specify its:
 -attack damage [OK]
 -an optional attack damage override value against units with a specific attribute [OK]
 
-The damage dealt should be calculated by taking the attack damage and subtracting the armor points. The final damage dealt can not fall below the value of 1 in any case.
-When the health points of a unit reach 0, the unit should be considered unable to fight and should be removed from the army.
+The damage dealt should be calculated by taking the attack damage and subtracting the armor points. The final damage dealt can not fall below the value of 1 in any case. [OK]
+When the health points of a unit reach 0, the unit should be considered unable to fight and should be removed from the army. [OK]
 
 Set up a turn-based fight between 2 armies, one spawned on the left side of the screen and the other on the right side:
 2 Long Sword Knights
