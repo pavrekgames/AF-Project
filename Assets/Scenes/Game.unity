@@ -153,11 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - name: Wooden shield
+  - name: Wooden Shield
     value: 90
   - name: Bow
     value: 150
-  - name: Mana Potion
+  - name: 'Mana Potion '
     value: 60
   - name: Sword
     value: 130
@@ -532,6 +532,7 @@ Transform:
   - {fileID: 556039558}
   - {fileID: 265030641}
   - {fileID: 585169462}
+  - {fileID: 796492364}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -769,6 +770,112 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &796492363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 246465938}
+    m_Modifications:
+    - target: {fileID: 1329781387587706877, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_Name
+      value: Item (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1562054653796185208, guid: 70297e35c79c32843b2cbbda048d720c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1329781387587706877, guid: 70297e35c79c32843b2cbbda048d720c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796492366}
+  m_SourcePrefab: {fileID: 100100000, guid: 70297e35c79c32843b2cbbda048d720c, type: 3}
+--- !u!4 &796492364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6760591476060598716, guid: 70297e35c79c32843b2cbbda048d720c,
+    type: 3}
+  m_PrefabInstance: {fileID: 796492363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &796492365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1329781387587706877, guid: 70297e35c79c32843b2cbbda048d720c,
+    type: 3}
+  m_PrefabInstance: {fileID: 796492363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &796492366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796492365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f76b5178e7bf5643be11a941ef3e665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Bag of gold
+    value: 200
+    inventoryController: {fileID: 117262}
 --- !u!1001 &846292666
 PrefabInstance:
   m_ObjectHideFlags: 0

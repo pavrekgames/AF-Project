@@ -26,6 +26,7 @@
             moneyText = FindObjectOfType<TextMeshProUGUI>();
 
             InventoryController.OnSoldItemsUpToValue += UpdateMoneyText;
+            InventoryController.OnCollectedMoney += UpdateMoneyText;
             moneyText.text = "Money: " + inventoryController.Money;
         }
 
@@ -40,6 +41,7 @@
         {
             TryPickUpIemInput();
             SellAllItemsUpToValueInput();
+            UseItemsInput();
         }
 
         private void SpawnNewItem()
@@ -80,6 +82,14 @@
             {
                 inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
                 
+            }
+        }
+
+        private void UseItemsInput()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                inventoryController.UseAllItems();
             }
         }
 

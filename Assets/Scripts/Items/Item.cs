@@ -4,10 +4,10 @@
 	using UnityEngine;
 
 	[Serializable]
-	public class Item
+	public class Item: IUsableItem
 	{
-		[SerializeField] private string name;
-		[SerializeField] private int value;
+		[SerializeField] protected string name;
+		[SerializeField] protected int value;
 
 		public string Name => name;
 		public int Value => value;
@@ -18,7 +18,7 @@
 			this.value = value;
 		}
 
-		public void Use()
+		public virtual void Use()
 		{
 			Debug.Log("Using" + Name);
 		}

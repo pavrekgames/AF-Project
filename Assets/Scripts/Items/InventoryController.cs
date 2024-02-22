@@ -13,6 +13,7 @@
 
         public delegate void MoneyDelegate(int money);
         public static event MoneyDelegate OnSoldItemsUpToValue;
+        public static event MoneyDelegate OnCollectedMoney;
 
         public void SellAllItemsUpToValue(int maxValue)
         {
@@ -55,9 +56,24 @@
             }
         }
 
+        public void UseAllItems()
+        {
+            foreach(var item in items)
+            {
+                item.Use();
+            }
+        }
+
         public void AddItem(Item item)
         {
             items.Add(item);
+        }
+
+        public void AddMoney(int money)
+        {
+            this.money += money;
+
+            OnCollectedMoney?.Invoke(this.money);
         }
     }
 }
