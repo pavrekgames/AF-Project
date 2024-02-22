@@ -26,5 +26,35 @@ namespace AFSInterview.Units
 
         #endregion
 
+        private void SpawnUnit(int unitIndex, Transform parent, BoxCollider spawnArea)
+        {
+            var spawnAreaBounds = spawnArea.bounds;
+            var position = new Vector3(
+                Random.Range(spawnAreaBounds.min.x, spawnAreaBounds.max.x),
+                0f,
+                Random.Range(spawnAreaBounds.min.z, spawnAreaBounds.max.z)
+            );
+
+            Instantiate(units[unitIndex], position, Quaternion.identity, parent);
+        }
+
+        public void CreateArmy_1()
+        {
+            SpawnUnit(LONG_SWORD_KNIGHT, armyLeftSpawnParent, armyLeftSpawnArea);
+            SpawnUnit(LONG_SWORD_KNIGHT, armyLeftSpawnParent, armyLeftSpawnArea);
+            SpawnUnit(DRUID, armyLeftSpawnParent, armyLeftSpawnArea);
+            SpawnUnit(RAM, armyLeftSpawnParent, armyLeftSpawnArea);
+        }
+
+        public void CreateArmy_2()
+        {
+            SpawnUnit(ARCHER, armyRightSpawnParent, armyRightSpawnArea);
+            SpawnUnit(ARCHER, armyRightSpawnParent, armyRightSpawnArea);
+            SpawnUnit(ARCHER, armyRightSpawnParent, armyRightSpawnArea);
+            SpawnUnit(CATAPULT, armyRightSpawnParent, armyRightSpawnArea);
+            SpawnUnit(RAM, armyRightSpawnParent, armyRightSpawnArea);
+        }
+
+
     }
 }

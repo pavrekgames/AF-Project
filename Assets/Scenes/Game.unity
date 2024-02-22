@@ -503,7 +503,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 226944842}
-  - component: {fileID: 226944844}
   - component: {fileID: 226944843}
   m_Layer: 0
   m_Name: UnitsFactory
@@ -546,21 +545,9 @@ MonoBehaviour:
   - {fileID: 3736129046892947335, guid: 4dc8ec78e58e25f4aac6e5d09b658ff2, type: 3}
   - {fileID: 4122247915597242877, guid: a0d062d1ae656904197452b08b9406a3, type: 3}
   armyLeftSpawnParent: {fileID: 278868168}
-  armyLeftSpawnArea: {fileID: 0}
+  armyLeftSpawnArea: {fileID: 442873913}
   armyRightSpawnParent: {fileID: 1353391285}
-  armyRightSpawnArea: {fileID: 0}
---- !u!114 &226944844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226944841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1ba15b6e874b646bbce5cd47b84888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  armyRightSpawnArea: {fileID: 1541688169}
 --- !u!1 &246465937
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1ba15b6e874b646bbce5cd47b84888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitsFactory: {fileID: 0}
 --- !u!1 &726838010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,14 +2252,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Druid
       objectReference: {fileID: 0}
+    - target: {fileID: 6457958368680957241, guid: 3fe2c36027274da448dec8c957e30707,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3895654584805993710, guid: 3fe2c36027274da448dec8c957e30707,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe2c36027274da448dec8c957e30707, type: 3}
 --- !u!1001 &2985849225919375949
 PrefabInstance:
@@ -2341,14 +2330,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 7862269010904107929, guid: d4136e5cf4358324187c7f980dee766f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1969372882618224644, guid: d4136e5cf4358324187c7f980dee766f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4136e5cf4358324187c7f980dee766f, type: 3}
 --- !u!1001 &3409322303242962423
 PrefabInstance:
@@ -2362,6 +2352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Long Sword Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046131642954982243, guid: 084ec548984d6084e996bc7ab5e8c2be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8931586231566361944, guid: 084ec548984d6084e996bc7ab5e8c2be,
         type: 3}
@@ -2421,11 +2416,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3034073775150968009, guid: 084ec548984d6084e996bc7ab5e8c2be,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 084ec548984d6084e996bc7ab5e8c2be, type: 3}
 --- !u!1001 &3514722000355510141
 PrefabInstance:
@@ -2513,6 +2504,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catapult
       objectReference: {fileID: 0}
+    - target: {fileID: 3736129046892947335, guid: 4dc8ec78e58e25f4aac6e5d09b658ff2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3950719038191879039, guid: 4dc8ec78e58e25f4aac6e5d09b658ff2,
         type: 3}
       propertyPath: m_RootOrder
@@ -2571,11 +2567,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2728347549140085334, guid: 4dc8ec78e58e25f4aac6e5d09b658ff2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc8ec78e58e25f4aac6e5d09b658ff2, type: 3}
 --- !u!1001 &7913318872429598984
 PrefabInstance:
@@ -2589,6 +2581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ram
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122247915597242877, guid: a0d062d1ae656904197452b08b9406a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7973803609263643199, guid: a0d062d1ae656904197452b08b9406a3,
         type: 3}
@@ -2648,9 +2645,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8508520164612597825, guid: a0d062d1ae656904197452b08b9406a3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d062d1ae656904197452b08b9406a3, type: 3}
