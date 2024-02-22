@@ -6,8 +6,6 @@ namespace AFSInterview.Combat
 {
     public class CombatManager : MonoBehaviour
     {
-        
-
 
     }
 }
