@@ -19,9 +19,9 @@ namespace AFSInterview.Units
 
         public int AttackInterwval => attackInterval;
 
-        public virtual void Attack(Unit unit, int damage)
+        public virtual void Attack(Unit unit)
         {
-            unit.ReceiveDamage(damage);
+            unit.ReceiveDamage(attackDamage);
         }
 
         public void ReceiveDamage(int damage)

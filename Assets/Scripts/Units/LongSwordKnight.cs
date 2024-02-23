@@ -8,17 +8,18 @@ namespace AFSInterview.Units
     {
         [SerializeField] private UnitAttribute damagleAttribute;
 
-        public override void Attack(Unit unit, int damage)
+        public override void Attack(Unit unit)
         {
             List<UnitAttribute> attributes = unit.GetAttributes();
 
             if (attributes.Contains(damagleAttribute)){
-                damage += optionalAttackDamage;
-                unit.ReceiveDamage(damage);
+                int finalDamage = attackDamage;
+                finalDamage += optionalAttackDamage;
+                unit.ReceiveDamage(finalDamage);
             }
             else
             {
-                unit.ReceiveDamage(damage);
+                unit.ReceiveDamage(attackDamage);
             }
         }
 

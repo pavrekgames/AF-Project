@@ -6,9 +6,9 @@ namespace AFSInterview.Units
 {
     public class Archer : Unit
     {
-        public override void Attack(Unit unit, int damage)
+        public override void Attack(Unit unit)
         {
-          base.Attack(unit, damage);
+          base.Attack(unit);
         }
     }
 }
