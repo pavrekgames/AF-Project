@@ -58,7 +58,7 @@
 
         public void UseAllItems()
         {
-            foreach(var item in items)
+            foreach (var item in items)
             {
                 item.Use();
             }

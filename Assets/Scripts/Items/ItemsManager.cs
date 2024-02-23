@@ -81,7 +81,6 @@
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 inventoryController.SellAllItemsUpToValue(itemSellMaxValue);
-                
             }
         }
 

@@ -15,7 +15,7 @@ namespace AFSInterview.Items
         {
             this.name = name;
             this.value = value;
-        } 
+        }
 
         public override void Use()
         {
