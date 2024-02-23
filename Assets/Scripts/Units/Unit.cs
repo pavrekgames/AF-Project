@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using static UnityEngine.UI.CanvasScaler;
 
 namespace AFSInterview.Units
 {
@@ -21,6 +22,7 @@ namespace AFSInterview.Units
 
         public virtual void Attack(Unit unit)
         {
+            Debug.Log(this.name + " Attacks " + unit.name + " with damage ");
             unit.ReceiveDamage(attackDamage);
         }
 
@@ -33,6 +35,7 @@ namespace AFSInterview.Units
                 damagePoint = 1;
             }
 
+            Debug.Log(damagePoint);
             health -= damagePoint;
             CheckUnitDead();
         }

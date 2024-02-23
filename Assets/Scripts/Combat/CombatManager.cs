@@ -40,6 +40,7 @@ namespace AFSInterview.Combat
         public void SetArmy_2(List<Unit> army)
         {
             army_2 = army;
+            StartCombat();
         }
 
         private void StartCombat()
@@ -59,6 +60,28 @@ namespace AFSInterview.Combat
 
         }
 
+        private void CheckResults()
+        {
+            if(army_1.Count > 0 && army_2.Count > 0)
+            {
+                NextRound();
+            }
+        }
+
+        private void NextRound()
+        {
+            if (armyNumberTurn == 1)
+            {
+                armyNumberTurn = 2;
+                StartCoroutine(ArmyTurn(army_2, army_1));
+            }
+            else if(armyNumberTurn == 2)
+            {
+                armyNumberTurn = 1;
+                StartCoroutine(ArmyTurn(army_1, army_2));
+            }
+        }
+
         private IEnumerator ArmyTurn(List<Unit> army, List<Unit> armyOpponent)
         {
             foreach (Unit unit in army)
@@ -71,6 +94,9 @@ namespace AFSInterview.Combat
                     yield return new WaitForSeconds(1);
                 } 
             }
+
+            CheckResults();
+
         }
 
         private Unit SelectRandomUnitOpponent(List<Unit> army)

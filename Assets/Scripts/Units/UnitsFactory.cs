@@ -49,8 +49,9 @@ namespace AFSInterview.Units
                 Random.Range(spawnAreaBounds.min.z, spawnAreaBounds.max.z)
             );
 
-            army.Add(units[unitIndex]);
-            Instantiate(units[unitIndex].UnitPresenter, position, Quaternion.identity, parent);
+            GameObject newUnit = Instantiate(units[unitIndex].UnitPresenter, position, Quaternion.identity, parent);
+            Unit unit = newUnit.GetComponent<Unit>();
+            army.Add(unit);
         }
 
         public void CreateArmy_1()
