@@ -1,22 +1,29 @@
 using AFSInterview.Units;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace AFSInterview.Combat
 {
     public class CombatManager : MonoBehaviour
     {
+        [Header("Armies")]
         [SerializeField] private UnitsFactory unitsFactory;
         [SerializeField] private List<Unit> army_1 = new List<Unit>();
         [SerializeField] private List<Unit> army_2 = new List<Unit>();
 
+        [Header("Armies Turns")]
         [SerializeField] private bool isArmy1_Start = false;
         [SerializeField] private int armyNumberTurn = 0;
+
+        [Header("UI")]
+        [SerializeField] private TextMeshProUGUI combatTurnText;
 
         private void Initialize()
         {
             unitsFactory = FindFirstObjectByType<UnitsFactory>();
+            combatTurnText = GameObject.Find("CombatTurnText").GetComponent<TextMeshProUGUI>();
 
             Unit.OnUnitDead += SetArmy1_State;
             Unit.OnUnitDead += SetArmy2_State;
@@ -69,11 +76,13 @@ namespace AFSInterview.Combat
             {
                 armyNumberTurn = 1;
                 StartCoroutine(ArmyTurn(army_1, army_2));
+                combatTurnText.text = "Current Turn: Left Army";
             }
             else
             {
                 armyNumberTurn = 2;
                 StartCoroutine(ArmyTurn(army_2, army_1));
+                combatTurnText.text = "Current Turn: Right Army";
             }
 
         }
@@ -84,6 +93,10 @@ namespace AFSInterview.Combat
             {
                 NextRound();
             }
+            else
+            {
+                combatTurnText.text = "End Combat";
+            }
         }
 
         private void NextRound()
@@ -92,11 +105,13 @@ namespace AFSInterview.Combat
             {
                 armyNumberTurn = 2;
                 StartCoroutine(ArmyTurn(army_2, army_1));
+                combatTurnText.text = "Current Turn: Right Army";
             }
             else if(armyNumberTurn == 2)
             {
                 armyNumberTurn = 1;
                 StartCoroutine(ArmyTurn(army_1, army_2));
+                combatTurnText.text = "Current Turn: Left Army";
             }
         }
 

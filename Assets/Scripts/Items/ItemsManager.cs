@@ -23,7 +23,7 @@
         {
             mainCamera = Camera.main;
             layerMask = LayerMask.GetMask("Item");
-            moneyText = FindObjectOfType<TextMeshProUGUI>();
+            moneyText = GameObject.Find("MoneyText").GetComponent<TextMeshProUGUI>();
 
             InventoryController.OnSoldItemsUpToValue += UpdateMoneyText;
             InventoryController.OnCollectedMoney += UpdateMoneyText;
