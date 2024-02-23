@@ -295,7 +295,7 @@ MonoBehaviour:
   attributes:
   - {fileID: 11400000, guid: de728e1402aa7f74987ee795f2b4639d, type: 2}
   health: 100
-  armor: 100
+  armor: 20
   attackInterval: 1
   attackDamage: 50
   optionalAttackDamage: 20

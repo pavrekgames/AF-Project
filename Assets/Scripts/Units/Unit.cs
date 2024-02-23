@@ -20,6 +20,9 @@ namespace AFSInterview.Units
 
         public int AttackInterwval => attackInterval;
 
+        public delegate void UnitDelegate(Unit unit);
+        public static event UnitDelegate OnUnitDead;
+
         public virtual void Attack(Unit unit)
         {
             Debug.Log(this.name + " Attacks " + unit.name + " with damage ");
@@ -45,6 +48,7 @@ namespace AFSInterview.Units
             if(health <= 0)
             {
                 Destroy(gameObject);
+                OnUnitDead?.Invoke(this);
             }
         }
 

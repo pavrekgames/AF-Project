@@ -17,6 +17,9 @@ namespace AFSInterview.Combat
         private void Initialize()
         {
             unitsFactory = FindFirstObjectByType<UnitsFactory>();
+
+            Unit.OnUnitDead += SetArmy1_State;
+            Unit.OnUnitDead += SetArmy2_State;
         }
 
         private void Start()
@@ -41,6 +44,21 @@ namespace AFSInterview.Combat
         {
             army_2 = army;
             StartCombat();
+        }
+
+        private void SetArmy1_State(Unit unit)
+        {
+            if (army_1.Contains(unit)){
+                army_1.Remove(unit);
+            }
+        }
+
+        private void SetArmy2_State(Unit unit)
+        {
+            if (army_2.Contains(unit))
+            {
+                army_2.Remove(unit);
+            }
         }
 
         private void StartCombat()
@@ -90,8 +108,16 @@ namespace AFSInterview.Combat
 
                 for(int i = 0; i < AttackCount; i++)
                 {
-                    unit.Attack(SelectRandomUnitOpponent(armyOpponent));
-                    yield return new WaitForSeconds(1);
+                    if(armyOpponent.Count > 0)
+                    {
+                        unit.Attack(SelectRandomUnitOpponent(armyOpponent));
+                        yield return new WaitForSeconds(1);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    
                 } 
             }
 
