@@ -1,0 +1,6 @@
+
+Used Design Patterns
+
+1) Observer pattern to update UI and change armies states
+2) Factory Pattern to spawn units for each army
+3) Strategy Pattern to implement different form attack for different units
