@@ -55,7 +55,8 @@ namespace AFSInterview.Combat
 
         private void SetArmy1_State(Unit unit)
         {
-            if (army_1.Contains(unit)){
+            if (army_1.Contains(unit))
+            {
                 army_1.Remove(unit);
             }
         }
@@ -72,24 +73,20 @@ namespace AFSInterview.Combat
         {
             isArmy1_Start = CheckArmy1_Start();
 
-            if(isArmy1_Start)
+            if (isArmy1_Start)
             {
-                armyNumberTurn = 1;
-                StartCoroutine(ArmyTurn(army_1, army_2));
-                combatTurnText.text = "Current Turn: Left Army";
+                SetArmyRound(1, army_1, army_2, "Current Turn: Left Army");
             }
             else
             {
-                armyNumberTurn = 2;
-                StartCoroutine(ArmyTurn(army_2, army_1));
-                combatTurnText.text = "Current Turn: Right Army";
+                SetArmyRound(2, army_2, army_1, "Current Turn: Right Army");
             }
 
         }
 
         private void CheckResults()
         {
-            if(army_1.Count > 0 && army_2.Count > 0)
+            if (army_1.Count > 0 && army_2.Count > 0)
             {
                 NextRound();
             }
@@ -103,16 +100,19 @@ namespace AFSInterview.Combat
         {
             if (armyNumberTurn == 1)
             {
-                armyNumberTurn = 2;
-                StartCoroutine(ArmyTurn(army_2, army_1));
-                combatTurnText.text = "Current Turn: Right Army";
+                SetArmyRound(2, army_2, army_1, "Current Turn: Right Army");
             }
-            else if(armyNumberTurn == 2)
+            else if (armyNumberTurn == 2)
             {
-                armyNumberTurn = 1;
-                StartCoroutine(ArmyTurn(army_1, army_2));
-                combatTurnText.text = "Current Turn: Left Army";
+                SetArmyRound(1, army_1, army_2, "Current Turn: Left Army");
             }
+        }
+
+        private void SetArmyRound(int armyNumber, List<Unit> army, List<Unit> armyOpponent, string turnText)
+        {
+            armyNumberTurn = armyNumber;
+            StartCoroutine(ArmyTurn(army, armyOpponent));
+            combatTurnText.text = turnText;
         }
 
         private IEnumerator ArmyTurn(List<Unit> army, List<Unit> armyOpponent)
@@ -121,9 +121,9 @@ namespace AFSInterview.Combat
             {
                 int AttackCount = unit.AttackInterwval;
 
-                for(int i = 0; i < AttackCount; i++)
+                for (int i = 0; i < AttackCount; i++)
                 {
-                    if(armyOpponent.Count > 0)
+                    if (armyOpponent.Count > 0)
                     {
                         unit.Attack(SelectRandomUnitOpponent(armyOpponent));
                         yield return new WaitForSeconds(1);
@@ -132,35 +132,28 @@ namespace AFSInterview.Combat
                     {
                         break;
                     }
-                    
-                } 
+                }
             }
 
             CheckResults();
-
         }
 
         private Unit SelectRandomUnitOpponent(List<Unit> army)
         {
             int index = Random.Range(0, army.Count);
-            
+
             return army[index];
         }
 
         private bool CheckArmy1_Start()
         {
             int state = Random.Range(0, 2);
-            
-            if(state == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
+            if (state == 1)
+                return true;
+            else
+                return false;
+        }
 
     }
 }
