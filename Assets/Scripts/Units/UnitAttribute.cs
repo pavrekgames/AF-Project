@@ -7,7 +7,7 @@ namespace AFSInterview.Units
     [CreateAssetMenu(fileName = "Attribute", menuName = "Unit Attribute")]
     public class UnitAttribute : ScriptableObject
     {
-       
+
         public enum UnitAttributes
         {
             Light,

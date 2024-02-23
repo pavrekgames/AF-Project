@@ -12,7 +12,8 @@ namespace AFSInterview.Units
         {
             List<UnitAttribute> attributes = unit.GetAttributes();
 
-            if (attributes.Contains(damagleAttribute)){
+            if (attributes.Contains(damagleAttribute))
+            {
                 int finalDamage = attackDamage;
                 finalDamage += optionalAttackDamage;
                 Debug.Log(this.name + " Attacks " + unit.name + " with damage ");

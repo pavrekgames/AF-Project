@@ -56,12 +56,12 @@ namespace AFSInterview.Units
 
         public void CreateArmy_1()
         {
-             SpawnUnit(LONG_SWORD_KNIGHT, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
-             SpawnUnit(LONG_SWORD_KNIGHT, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
-             SpawnUnit(DRUID, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
-             SpawnUnit(RAM, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
+            SpawnUnit(LONG_SWORD_KNIGHT, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
+            SpawnUnit(LONG_SWORD_KNIGHT, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
+            SpawnUnit(DRUID, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
+            SpawnUnit(RAM, armyLeftSpawnParent, armyLeftSpawnArea, armyLeftUnits);
 
-             combatManager.SetArmy_1(armyLeftUnits); 
+            combatManager.SetArmy_1(armyLeftUnits);
         }
 
         public void CreateArmy_2()
