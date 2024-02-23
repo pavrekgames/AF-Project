@@ -11,6 +11,9 @@ namespace AFSInterview.Combat
         [SerializeField] private List<Unit> army_1 = new List<Unit>();
         [SerializeField] private List<Unit> army_2 = new List<Unit>();
 
+        [SerializeField] private bool isArmy1_Start = false;
+        [SerializeField] private int armyNumberTurn = 0;
+
         private void Initialize()
         {
             unitsFactory = FindFirstObjectByType<UnitsFactory>();
@@ -39,16 +42,34 @@ namespace AFSInterview.Combat
             army_2 = army;
         }
 
-        private void ArmyTurn(List<Unit> army)
+        private void StartCombat()
+        {
+            isArmy1_Start = CheckArmy1_Start();
+
+            if(isArmy1_Start)
+            {
+                armyNumberTurn = 1;
+                StartCoroutine(ArmyTurn(army_1, army_2));
+            }
+            else
+            {
+                armyNumberTurn = 2;
+                StartCoroutine(ArmyTurn(army_2, army_1));
+            }
+
+        }
+
+        private IEnumerator ArmyTurn(List<Unit> army, List<Unit> armyOpponent)
         {
             foreach (Unit unit in army)
             {
                 int AttackCount = unit.AttackInterwval;
 
-               /* for(int i = 0; i < AttackCount; i++)
+                for(int i = 0; i < AttackCount; i++)
                 {
-                    unit.Attack(SelectRandomUnitOpponent(army), )
-                } */
+                    unit.Attack(SelectRandomUnitOpponent(armyOpponent));
+                    yield return new WaitForSeconds(1);
+                } 
             }
         }
 
@@ -57,6 +78,20 @@ namespace AFSInterview.Combat
             int index = Random.Range(0, army.Count);
             
             return army[index];
+        }
+
+        private bool CheckArmy1_Start()
+        {
+            int state = Random.Range(0, 2);
+            
+            if(state == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
