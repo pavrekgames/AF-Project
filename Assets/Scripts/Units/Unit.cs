@@ -17,6 +17,8 @@ namespace AFSInterview.Units
 
         public GameObject UnitPresenter => unitPresenter;
 
+        public int AttackInterwval => attackInterval;
+
         public virtual void Attack(Unit unit, int damage)
         {
             unit.ReceiveDamage(damage);

@@ -39,5 +39,26 @@ namespace AFSInterview.Combat
             army_2 = army;
         }
 
+        private void ArmyTurn(List<Unit> army)
+        {
+            foreach (Unit unit in army)
+            {
+                int AttackCount = unit.AttackInterwval;
+
+               /* for(int i = 0; i < AttackCount; i++)
+                {
+                    unit.Attack(SelectRandomUnitOpponent(army), )
+                } */
+            }
+        }
+
+        private Unit SelectRandomUnitOpponent(List<Unit> army)
+        {
+            int index = Random.Range(0, army.Count);
+            
+            return army[index];
+        }
+
+
     }
 }
