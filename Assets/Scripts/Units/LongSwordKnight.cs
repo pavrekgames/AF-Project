@@ -16,6 +16,7 @@ namespace AFSInterview.Units
                 int finalDamage = attackDamage;
                 finalDamage += optionalAttackDamage;
                 Debug.Log(this.name + " Attacks " + unit.name + " with damage ");
+                Debug.Log("Optional damage: " + optionalAttackDamage);
                 unit.ReceiveDamage(finalDamage);
             }
             else

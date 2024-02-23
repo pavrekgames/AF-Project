@@ -817,6 +817,7 @@ MonoBehaviour:
   army_2: []
   isArmy1_Start: 0
   armyNumberTurn: 0
+  combatTurnText: {fileID: 0}
 --- !u!1 &726838010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1576,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.9528302, g: 0.26517445, b: 0.26517445, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
